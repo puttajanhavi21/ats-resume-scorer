@@ -1,0 +1,311 @@
+{
+  "action_bullets": [
+    "Built a Flask application with 6 endpoints to track book loans and overdue returns for a classroom demonstration.",
+    "Implemented SQL queries and validation rules to prevent duplicate loans and make borrower records easier to maintain.",
+    "Created 18 tests covering checkout, return, search and invalid inputs, using a fictional dataset of library records.",
+    "Documented installation steps and application routes so classmates could run the project and contribute improvements.",
+    "Analyzed 500 records from a synthetic student survey to summarize study patterns and identify missing responses.",
+    "Automated data cleaning and generated summary reports to compare results across departments using reproducible Python scripts.",
+    "Collaborated with classmates to review assumptions and present findings with clear explanations of the dataset limitations."
+  ],
+  "ai": {
+    "message": "Optional AI review was not requested.",
+    "review": null,
+    "status": "off"
+  },
+  "bullet_count": 7,
+  "categories": [
+    {
+      "checks": [
+        {
+          "advice": "Add a clear 'Education' heading on its own line.",
+          "category": "Structure",
+          "detail": "Looks for a recognizable education heading.",
+          "passed": true,
+          "title": "Education section"
+        },
+        {
+          "advice": "Add a clear 'Skills' heading on its own line.",
+          "category": "Structure",
+          "detail": "Looks for a recognizable skills heading.",
+          "passed": true,
+          "title": "Skills section"
+        },
+        {
+          "advice": "Include an Experience or Projects section with your contributions.",
+          "category": "Structure",
+          "detail": "Projects count for students who do not yet have work experience.",
+          "passed": true,
+          "title": "Experience or projects"
+        },
+        {
+          "advice": "Put a professional contact email in the document body.",
+          "category": "Structure",
+          "detail": "Checks for an email address in extracted text.",
+          "passed": true,
+          "title": "Email found"
+        }
+      ],
+      "name": "Structure",
+      "score": 100,
+      "weight": 20
+    },
+    {
+      "checks": [
+        {
+          "advice": "Write at least three specific contribution bullets under Experience or Projects.",
+          "category": "Content",
+          "detail": "Found 7 contribution lines; this demo targets at least 3.",
+          "passed": true,
+          "title": "Contribution bullets"
+        },
+        {
+          "advice": "Start more bullets with verbs such as Built, Analyzed, Implemented or Improved.",
+          "category": "Content",
+          "detail": "7 of 7 contribution lines start with a recognized action verb.",
+          "passed": true,
+          "title": "Action verbs"
+        },
+        {
+          "advice": "Add real measurements where available: users, time saved, test count or percentage improvement. Never invent numbers.",
+          "category": "Content",
+          "detail": "3 of 7 contribution lines contain a recognized metric.",
+          "passed": true,
+          "title": "Measurable outcomes"
+        },
+        {
+          "advice": "Keep each contribution focused on an action, method and result.",
+          "category": "Content",
+          "detail": "This demo targets no more than 35 words per contribution line.",
+          "passed": true,
+          "title": "Concise bullets"
+        }
+      ],
+      "name": "Content",
+      "score": 100,
+      "weight": 25
+    },
+    {
+      "checks": [
+        {
+          "advice": "Review the amount of detail for your experience level. The length range is a project heuristic.",
+          "category": "Formatting",
+          "detail": "Found 223 words; the learning heuristic uses 180–1,000 words.",
+          "passed": true,
+          "title": "Readable length"
+        },
+        {
+          "advice": "Use separate lines for headings and bullets, then check the extracted-text preview.",
+          "category": "Formatting",
+          "detail": "Found 23 non-empty lines.",
+          "passed": true,
+          "title": "Text organized into lines"
+        },
+        {
+          "advice": "Re-export the resume using standard fonts and check its copied text.",
+          "category": "Formatting",
+          "detail": "Looks for replacement characters and null bytes.",
+          "passed": true,
+          "title": "No obvious extraction corruption"
+        },
+        {
+          "advice": "Consider a simpler single-column layout and verify the reading order.",
+          "category": "Formatting",
+          "detail": "Repeated pipe-separated columns can be a reading-order warning; this is not a visual layout check.",
+          "passed": true,
+          "title": "Simple text separators"
+        }
+      ],
+      "name": "Formatting",
+      "score": 100,
+      "weight": 15
+    },
+    {
+      "checks": [
+        {
+          "advice": "Review the spelling suggestions below.",
+          "category": "Language",
+          "detail": "Checks only the small typo dictionary in data.py.",
+          "passed": true,
+          "title": "Common typo check"
+        },
+        {
+          "advice": "Remove accidental repeated words.",
+          "category": "Language",
+          "detail": "Looks for consecutive repeated words.",
+          "passed": true,
+          "title": "Repeated words"
+        },
+        {
+          "advice": "Replace indirect phrases with actions and evidence.",
+          "category": "Language",
+          "detail": "Looks for a few indirect phrases.",
+          "passed": true,
+          "title": "Direct phrasing"
+        },
+        {
+          "advice": "Split dense lines into shorter bullets.",
+          "category": "Language",
+          "detail": "Flags lines with more than 40 words.",
+          "passed": true,
+          "title": "Readable line length"
+        }
+      ],
+      "name": "Language",
+      "score": 100,
+      "weight": 15
+    },
+    {
+      "checks": [],
+      "name": "Job match",
+      "score": 47,
+      "weight": 25
+    }
+  ],
+  "created_at": "2026-10-14T16:51:11+00:00",
+  "disclaimer": "An explainable project heuristic, not an employer ATS score or hiring prediction.",
+  "file": {
+    "pages": null,
+    "source": "Pasted text",
+    "warnings": []
+  },
+  "job": {
+    "available": true,
+    "coverage": 58.3,
+    "job_skills": [
+      "AWS",
+      "Communication",
+      "Data analysis",
+      "Docker",
+      "Flask",
+      "Git",
+      "Pandas",
+      "PostgreSQL",
+      "Python",
+      "REST APIs",
+      "SQL",
+      "Testing"
+    ],
+    "keywords": [
+      {
+        "found": false,
+        "term": "developer"
+      },
+      {
+        "found": false,
+        "term": "required"
+      },
+      {
+        "found": false,
+        "term": "intern"
+      },
+      {
+        "found": true,
+        "term": "backend"
+      },
+      {
+        "found": true,
+        "term": "python"
+      },
+      {
+        "found": true,
+        "term": "input"
+      },
+      {
+        "found": false,
+        "term": "automated tests"
+      },
+      {
+        "found": false,
+        "term": "applications required"
+      },
+      {
+        "found": false,
+        "term": "apis unit"
+      },
+      {
+        "found": false,
+        "term": "web"
+      },
+      {
+        "found": false,
+        "term": "web applications"
+      },
+      {
+        "found": false,
+        "term": "tradeoffs"
+      }
+    ],
+    "matched": [
+      "Data analysis",
+      "Flask",
+      "Git",
+      "Pandas",
+      "Python",
+      "SQL",
+      "Testing"
+    ],
+    "missing": [
+      "AWS",
+      "Communication",
+      "Docker",
+      "PostgreSQL",
+      "REST APIs"
+    ],
+    "note": "75% skill coverage + 25% TF-IDF similarity. Mentions are not proof of proficiency.",
+    "resume_skills": [
+      "CSS",
+      "Data analysis",
+      "Flask",
+      "Git",
+      "GitHub",
+      "HTML",
+      "Pandas",
+      "Python",
+      "SQL",
+      "SQLite",
+      "Testing"
+    ],
+    "score": 47,
+    "similarity": 13.7
+  },
+  "label": "Strong foundation",
+  "language_issues": [],
+  "metric_bullets": [
+    "Built a Flask application with 6 endpoints to track book loans and overdue returns for a classroom demonstration.",
+    "Created 18 tests covering checkout, return, search and invalid inputs, using a fictional dataset of library records.",
+    "Analyzed 500 records from a synthetic student survey to summarize study patterns and identify missing responses."
+  ],
+  "overall_score": 87,
+  "recommendations": [
+    "Review these job skills and add evidence only if accurate: AWS, Communication, Docker, PostgreSQL, REST APIs."
+  ],
+  "scoring_note": "Weighted average over 100 available weight points. AI feedback does not change this score.",
+  "sections": [
+    "Certifications",
+    "Education",
+    "Projects",
+    "Skills",
+    "Summary"
+  ],
+  "strengths": [
+    "Education section",
+    "Skills section",
+    "Experience or projects",
+    "Email found",
+    "Contribution bullets",
+    "Action verbs",
+    "Measurable outcomes",
+    "Concise bullets",
+    "Readable length",
+    "Text organized into lines",
+    "No obvious extraction corruption",
+    "Simple text separators",
+    "Common typo check",
+    "Repeated words",
+    "Direct phrasing",
+    "Readable line length"
+  ],
+  "title": "ATS Resume Scorer — Learning Report",
+  "word_count": 223
+}

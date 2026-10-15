@@ -1,0 +1,85 @@
+"""Small, editable dictionaries. Start learning the project here."""
+
+# Each key is the name shown in the report. Values are equivalent spellings.
+# These are manually chosen aliases, NOT a trained semantic model.
+SKILLS = {
+    "Python": ["python"],
+    "Java": ["java"],
+    "JavaScript": ["javascript", "js"],
+    "TypeScript": ["typescript"],
+    "C++": ["c++"],
+    "C#": ["c#", "c sharp"],
+    "SQL": ["sql", "structured query language"],
+    "HTML": ["html", "html5"],
+    "CSS": ["css", "css3"],
+    "Flask": ["flask"],
+    "Django": ["django"],
+    "FastAPI": ["fastapi", "fast api"],
+    "React": ["react", "reactjs", "react.js"],
+    "Node.js": ["node.js", "nodejs", "node js"],
+    "REST APIs": ["rest api", "rest apis", "restful api", "restful apis"],
+    "Git": ["git"],
+    "GitHub": ["github"],
+    "Docker": ["docker"],
+    "Kubernetes": ["kubernetes", "k8s"],
+    "Linux": ["linux"],
+    "AWS": ["aws", "amazon web services"],
+    "Azure": ["azure"],
+    "Google Cloud": ["gcp", "google cloud"],
+    "PostgreSQL": ["postgresql", "postgres"],
+    "MySQL": ["mysql"],
+    "SQLite": ["sqlite"],
+    "MongoDB": ["mongodb", "mongo db"],
+    "Redis": ["redis"],
+    "Pandas": ["pandas"],
+    "NumPy": ["numpy"],
+    "Scikit-learn": ["scikit-learn", "scikit learn", "sklearn"],
+    "TensorFlow": ["tensorflow"],
+    "PyTorch": ["pytorch"],
+    "Machine learning": ["machine learning", "ml"],
+    "Deep learning": ["deep learning"],
+    "NLP": ["nlp", "natural language processing"],
+    "Generative AI": ["generative ai", "genai", "gen ai"],
+    "LLMs": ["llm", "llms", "large language model", "large language models"],
+    "Data analysis": ["data analysis", "data analytics"],
+    "Data visualization": ["data visualization", "data visualisation"],
+    "Excel": ["excel", "microsoft excel"],
+    "Power BI": ["power bi", "powerbi"],
+    "Tableau": ["tableau"],
+    "Testing": ["unit testing", "automated testing", "pytest", "unittest"],
+    "CI/CD": ["ci/cd", "continuous integration", "continuous delivery"],
+    "Agile": ["agile", "scrum"],
+    "Communication": ["communication", "communicate"],
+    "Teamwork": ["teamwork", "team collaboration"],
+    "Problem solving": ["problem solving", "problem-solving"],
+}
+
+SECTIONS = {
+    "Education": ["education", "academic background", "qualifications"],
+    "Skills": ["skills", "technical skills", "core skills", "technologies"],
+    "Experience": ["experience", "work experience", "professional experience", "internships", "internship experience"],
+    "Projects": ["projects", "personal projects", "academic projects", "selected projects"],
+    "Summary": ["summary", "professional summary", "profile", "objective"],
+    "Certifications": ["certifications", "certificates"],
+}
+
+ACTION_VERBS = {
+    "built", "build", "developed", "develop", "designed", "design",
+    "implemented", "implement", "created", "create", "analyzed", "analyse",
+    "analysed", "analyze", "automated", "automate", "improved", "improve",
+    "optimized", "optimize", "optimised", "led", "lead", "managed", "manage",
+    "tested", "test", "deployed", "deploy", "reduced", "reduce", "increased",
+    "increase", "integrated", "integrate", "collaborated", "collaborate",
+    "delivered", "deliver", "documented", "document", "resolved", "resolve",
+    "trained", "train", "evaluated", "evaluate", "maintained", "maintain",
+}
+
+# Deliberately small: unfamiliar names and technologies should not be called wrong.
+COMMON_TYPOS = {
+    "experiance": "experience", "experienece": "experience",
+    "responsibilites": "responsibilities", "developement": "development",
+    "acheived": "achieved", "recieved": "received", "sucessfully": "successfully",
+    "managment": "management", "proffesional": "professional",
+    "communcation": "communication", "knowlege": "knowledge",
+    "proficientcy": "proficiency", "analysys": "analysis",
+}

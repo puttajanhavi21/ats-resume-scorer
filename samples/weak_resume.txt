@@ -1,0 +1,8 @@
+Alex Example
+
+I am a student looking for a job. I have knowlege of computers and I am interested
+in software developement. I have worked on a college application and I am
+responsible for the the project. I have experiance with Python and can do
+programming tasks. I like working with other people and learning new topics.
+
+This intentionally weak, fictional example demonstrates the local writing checks.

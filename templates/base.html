@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Understand your resume with transparent scoring and optional AI feedback.">
+  <title>{% block title %}ATS Resume Scorer{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('home') }}"><span class="brand-icon" aria-hidden="true">r.</span> resume<span class="brand-light">lab</span></a>
+    <span class="header-note">A little clarity for your next application.</span>
+    <span class="pill">ATS Resume Scorer</span>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="site-footer"><span>Built to help you understand and improve.</span><span>Python · NLP · Flask · Optional Generative AI</span></footer>
+</body>
+</html>

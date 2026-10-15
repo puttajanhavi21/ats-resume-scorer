@@ -1,0 +1,80 @@
+ATS Resume Scorer — Learning Report
+=======================================================
+2026-10-14T16:51:11+00:00
+Score: 87/100 — Strong foundation
+An explainable project heuristic, not an employer ATS score or hiring prediction.
+Weighted average over 100 available weight points. AI feedback does not change this score.
+Words: 223 | Contribution lines: 7
+Sections: Certifications, Education, Projects, Skills, Summary
+
+SCORE BREAKDOWN
+Structure: 100 (weight 20)
+  PASS — Education section: Looks for a recognizable education heading.
+  PASS — Skills section: Looks for a recognizable skills heading.
+  PASS — Experience or projects: Projects count for students who do not yet have work experience.
+  PASS — Email found: Checks for an email address in extracted text.
+Content: 100 (weight 25)
+  PASS — Contribution bullets: Found 7 contribution lines; this demo targets at least 3.
+  PASS — Action verbs: 7 of 7 contribution lines start with a recognized action verb.
+  PASS — Measurable outcomes: 3 of 7 contribution lines contain a recognized metric.
+  PASS — Concise bullets: This demo targets no more than 35 words per contribution line.
+Formatting: 100 (weight 15)
+  PASS — Readable length: Found 223 words; the learning heuristic uses 180–1,000 words.
+  PASS — Text organized into lines: Found 23 non-empty lines.
+  PASS — No obvious extraction corruption: Looks for replacement characters and null bytes.
+  PASS — Simple text separators: Repeated pipe-separated columns can be a reading-order warning; this is not a visual layout check.
+Language: 100 (weight 15)
+  PASS — Common typo check: Checks only the small typo dictionary in data.py.
+  PASS — Repeated words: Looks for consecutive repeated words.
+  PASS — Direct phrasing: Looks for a few indirect phrases.
+  PASS — Readable line length: Flags lines with more than 40 words.
+Job match: 47 (weight 25)
+
+STRENGTHS
+- Education section
+- Skills section
+- Experience or projects
+- Email found
+- Contribution bullets
+- Action verbs
+- Measurable outcomes
+- Concise bullets
+- Readable length
+- Text organized into lines
+- No obvious extraction corruption
+- Simple text separators
+- Common typo check
+- Repeated words
+- Direct phrasing
+- Readable line length
+
+RECOMMENDATIONS
+- Review these job skills and add evidence only if accurate: AWS, Communication, Docker, PostgreSQL, REST APIs.
+
+FILE NOTES
+None from these checks.
+
+JOB ALIGNMENT
+75% skill coverage + 25% TF-IDF similarity. Mentions are not proof of proficiency.
+Resume skill mentions: CSS, Data analysis, Flask, Git, GitHub, HTML, Pandas, Python, SQL, SQLite, Testing
+Matched job skills: Data analysis, Flask, Git, Pandas, Python, SQL, Testing
+Missing job skills: AWS, Communication, Docker, PostgreSQL, REST APIs
+Skill coverage: 58.3 | TF-IDF similarity: 13.7
+- developer: not found
+- required: not found
+- intern: not found
+- backend: found
+- python: found
+- input: found
+- automated tests: not found
+- applications required: not found
+- apis unit: not found
+- web: not found
+- web applications: not found
+- tradeoffs: not found
+
+BASIC LANGUAGE CHECKS
+Limited rules, not a complete grammar or spell check.
+
+OPTIONAL AI REVIEW
+Optional AI review was not requested.

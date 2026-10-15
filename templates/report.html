@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Your report · ATS Resume Scorer{% endblock %}
+{% block content %}
+<div class="report-top"><div><p class="eyebrow">YOUR RESUME, WITH A CLEARER PICTURE</p><h1>Your next edit<br><em>starts here.</em></h1></div>
+  <div class="report-actions"><a class="button secondary" href="{{ url_for('home') }}">New analysis</a><button class="button primary" id="download-text" type="button">Download report ↓</button></div>
+</div>
+<section class="score-panel" aria-label="Overall resume assessment">
+  <div class="score-number">{{ report.overall_score }}<span>/100</span></div>
+  <div class="score-summary"><p class="eyebrow">EXPLAINABLE RESUME SCORE</p><h2>{{ report.label }}</h2><p>{{ report.disclaimer }}</p><div class="score-facts"><span>{{ report.word_count }} words</span><span>{{ report.bullet_count }} contribution lines</span><span>{{ report.file.source }}</span>{% if report.file.pages %}<span>{{ report.file.pages }} pages</span>{% endif %}</div></div>
+</section>
+<section class="category-grid" aria-label="Category scores">
+{% for category in report.categories %}
+  <div class="category-card"><div class="category-top"><h2>{{ category.name }}</h2><span>{{ category.weight }} pts</span></div><strong>{{ category.score if category.score is not none else '—' }}{% if category.score is not none %}<small>/100</small>{% endif %}</strong>
+  {% if category.score is not none %}<progress value="{{ category.score }}" max="100" aria-label="{{ category.name }} score"></progress>{% else %}<p class="muted small">Add a job description</p>{% endif %}</div>
+{% endfor %}
+</section>
+<p class="score-note">{{ report.scoring_note }}</p>
+<div class="report-columns">
+  <section class="card"><p class="eyebrow">YOUR ACTION PLAN</p><h2>Where to focus</h2><ol class="recommendations">{% for item in report.recommendations %}<li>{{ item }}</li>{% else %}<li>No changes were flagged by these limited checks. Review the extracted text and get human feedback.</li>{% endfor %}</ol></section>
+  <section class="card strengths"><p class="eyebrow">KEEP WHAT WORKS</p><h2>Your strengths</h2><ul class="clean-list">{% for item in report.strengths %}<li><span class="checkmark" aria-hidden="true">✓</span>{{ item }}</li>{% else %}<li>Start with the recommendations to build a stronger foundation.</li>{% endfor %}</ul></section>
+</div>
+<section class="card" id="job-match"><div class="card-heading"><div><p class="eyebrow">THE ROLE CONNECTION</p><h2>Skills &amp; job alignment</h2></div>{% if report.job.available %}<span class="pill">Local NLP analysis</span>{% endif %}</div>
+  <p class="muted">{{ report.job.note }}</p>
+  {% if report.job.available %}
+    <div class="match-metrics"><div><strong>{{ report.job.coverage if report.job.coverage is not none else 'N/A' }}{% if report.job.coverage is not none %}%{% endif %}</strong><span>Dictionary skill coverage</span></div><div><strong>{{ report.job.similarity }}%</strong><span>TF-IDF text similarity</span></div></div>
+    <div class="split"><div><h3>Matched skill mentions</h3><div class="chips">{% for skill in report.job.matched %}<span class="chip green">{{ skill }}</span>{% else %}<span class="muted">No dictionary matches found.</span>{% endfor %}</div></div><div><h3>Missing skill mentions</h3><div class="chips">{% for skill in report.job.missing %}<span class="chip amber">{{ skill }}</span>{% else %}<span class="muted">No gaps in the recognized dictionary skills.</span>{% endfor %}</div></div></div>
+    <p class="small muted">The dictionary treats all recognized mentions equally, including preferred skills. Add a missing skill only when you can support it. TF-IDF measures shared wording, not semantic understanding.</p>
+    <details><summary>Explore important job-description terms</summary><div class="chips detail-content">{% for item in report.job.keywords %}<span class="chip {{ 'green' if item.found else 'neutral' }}">{{ item.term }} · {{ 'found' if item.found else 'not found' }}</span>{% else %}<p>No meaningful terms were found.</p>{% endfor %}</div><p class="small muted">These are the top weighted words and phrases, not necessarily requirements.</p></details>
+  {% endif %}
+  <details><summary>All recognized skills in your resume</summary><div class="chips detail-content">{% for skill in report.job.resume_skills %}<span class="chip neutral">{{ skill }}</span>{% else %}<p>No skills from the current dictionary were found.</p>{% endfor %}</div></details>
+</section>
+<section class="card"><p class="eyebrow">LOOK UNDER THE SCORE</p><h2>What we checked</h2><p class="muted">Simple rules you can inspect, understand and change.</p>
+{% for category in report.categories if category.checks %}<details><summary>{{ category.name }} <span class="summary-score">{{ category.score }}/100</span></summary><div class="checks">{% for check in category.checks %}<div class="check-row"><span class="status-dot {{ 'pass' if check.passed else 'review' }}">{{ 'Pass' if check.passed else 'Review' }}</span><div><strong>{{ check.title }}</strong><p>{{ check.detail }}</p>{% if not check.passed %}<p class="check-advice">{{ check.advice }}</p>{% endif %}</div></div>{% endfor %}</div></details>{% endfor %}
+</section>
+<section class="card"><p class="eyebrow">MAKE EACH WORD COUNT</p><h2>Writing checks</h2><p class="muted">A small English typo list, repeated-word checks, phrasing and line length. This is not a complete grammar or spell checker.</p>
+{% for issue in report.language_issues %}<div class="writing-issue"><span class="line-tag">Line {{ issue.line }}</span><div><q>{{ issue.text }}</q><p>{{ issue.suggestion }}</p></div></div>{% else %}<p class="empty-state">No issues found by these limited rules. A final human proofread is still useful.</p>{% endfor %}
+</section>
+<section class="card ai-card"><div class="card-heading"><div><p class="eyebrow">A SECOND PERSPECTIVE</p><h2>Optional AI review</h2></div><span class="pill">{{ report.ai.status|replace('_', ' ')|title }}</span></div><p class="muted">{{ report.ai.message }}</p>
+{% if report.ai.review %}{% set ai = report.ai.review %}<p>{{ ai.summary }}</p>
+  <h3>Semantic skill evidence</h3><p class="small muted">Quotes are checked against your inputs. Their interpretation and the truth of a claim still require your review.</p>
+  {% for item in ai.skill_checks %}<article class="evidence"><h4>{{ item.skill }} <span class="chip neutral">{{ item.status|replace('_', ' ') }}</span></h4><p>{{ item.explanation }}</p><p><strong>Job:</strong> <q>{{ item.job_evidence }}</q></p><p><strong>Resume:</strong> {% if item.resume_evidence %}<q>{{ item.resume_evidence }}</q>{% else %}No supporting quote found.{% endif %}</p></article>{% else %}<p class="muted">No validated job skill checks were returned.</p>{% endfor %}
+  {% for key, title in [('writing_suggestions', 'Grammar & spelling suggestions'), ('bullet_rewrites', 'Possible bullet improvements')] %}<h3>{{ title }}</h3>{% for item in ai[key] %}<div class="evidence"><p><strong>Original:</strong> {{ item.original }}</p><p><strong>Suggestion:</strong> {{ item.suggestion }}</p><p class="small muted">{{ item.reason }}</p></div>{% else %}<p class="muted">No suggestions returned.</p>{% endfor %}{% endfor %}
+  <h3>AI recommendations</h3><ul>{% for item in ai.recommendations %}<li>{{ item }}</li>{% endfor %}</ul>
+  {% if ai.discarded_items %}<p class="small muted">{{ ai.discarded_items }} items were removed because their quotes could not be verified or their suggestions added new numbers.</p>{% endif %}
+{% endif %}
+</section>
+<section class="card"><p class="eyebrow">CHECK THE INPUT, TOO</p><h2>Document reading</h2><p class="muted">This app checks extracted text. It cannot reliably inspect fonts, margins, PDF columns or visual layout, and it does not perform OCR.</p>{% for warning in report.file.warnings %}<p class="file-warning">{{ warning }}</p>{% endfor %}<details><summary>View the extracted resume text</summary><pre class="extracted-text">{{ extracted_text }}</pre></details></section>
+<div class="bottom-actions"><button class="button secondary" type="button" id="download-json">Download JSON</button><button class="button secondary" type="button" id="print-report">Print / Save as PDF</button><a class="text-link" href="{{ url_for('home') }}">Analyze another resume →</a></div>
+<script type="application/json" id="report-data">{{ report|tojson }}</script>
+<script type="application/json" id="report-text">{{ report_text|tojson }}</script>
+{% endblock %}

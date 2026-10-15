@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="intro">
+  <div><p class="eyebrow">YOUR NEXT CHAPTER, A LITTLE CLEARER</p><h1>Good experience.<br><em>Better expressed.</em></h1></div>
+  <p class="intro-description">See what your resume communicates, find gaps against a role, and leave with a practical plan to improve it.</p>
+</section>
+<div class="workspace">
+  <aside class="guide-card">
+    <p class="eyebrow">FROM RESUME TO REPORT</p>
+    <ol class="steps">
+      <li><span>01</span><div><strong>Bring your resume</strong><p>Upload a document or paste its text.</p></div></li>
+      <li><span>02</span><div><strong>Add your target role</strong><p>A job description makes feedback more relevant.</p></div></li>
+      <li><span>03</span><div><strong>Make your next edit</strong><p>Use clear checks and specific recommendations.</p></div></li>
+    </ol>
+    <div class="guide-note"><span class="spark" aria-hidden="true">✳</span><h2>Know the “why.”</h2><p>Every category shows its checks. Scores are learning heuristics, not employer ATS results or hiring predictions.</p></div>
+    <a class="text-link" href="{{ url_for('home', demo=1) }}">Try a fictional example <span aria-hidden="true">↗</span></a>
+  </aside>
+  <form class="input-card" action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data" id="resume-form">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+    {% if error %}<div class="alert" role="alert"><strong>One thing to fix</strong><p>{{ error }}</p></div>{% endif %}
+    <div class="section-heading"><span class="step-tag">01</span><div><h2>Your resume</h2><p>Choose a file or paste text below.</p></div><span class="required-label">Required</span></div>
+    <div class="upload-box">
+      <label for="resume-file"><span class="upload-icon" aria-hidden="true">↑</span><strong>Choose your resume file</strong></label>
+      <p id="file-help">PDF, DOCX or TXT · Up to 5 MB · Text-based PDFs only</p>
+      <input type="file" id="resume-file" name="resume_file" accept=".pdf,.docx,.txt" aria-describedby="file-help">
+    </div>
+    <div class="or-divider"><span>or paste your resume</span></div>
+    <label class="sr-only" for="resume-text">Resume text</label>
+    <textarea id="resume-text" name="resume_text" rows="7" maxlength="30000" placeholder="Your name and contact details&#10;&#10;EDUCATION&#10;SKILLS&#10;PROJECTS&#10;• Built…" aria-describedby="resume-help">{{ resume_text }}</textarea>
+    <div class="field-meta" id="resume-help"><span>Keep section headings and line breaks.</span><span id="resume-count">{{ resume_text|length }} / 30,000</span></div>
+    <div class="section-heading second"><span class="step-tag">02</span><div><h2>The role you have in mind</h2><p>Paste a job description to compare skills and wording.</p></div><span class="optional-label">Optional</span></div>
+    <label class="sr-only" for="job-description">Job description</label>
+    <textarea id="job-description" name="job_description" rows="5" maxlength="15000" placeholder="Paste the role’s responsibilities, skills and requirements here…">{{ job_description }}</textarea>
+    <div class="ai-option">
+      <input type="checkbox" id="use-ai" name="use_ai" value="yes" {% if not ai_ready %}disabled{% endif %}>
+      <label for="use-ai"><strong>Add an AI second opinion <span class="tiny-tag">OPTIONAL</span></strong><span>Semantic skill evidence, writing feedback and bullet suggestions.</span>
+        {% if ai_ready %}<small>Checking this sends your full resume text and job description to OpenAI. API usage may incur charges.</small>
+        {% else %}<small>Available after you add an API key to .env and restart. Local analysis works without a key.</small>{% endif %}
+      </label>
+    </div>
+    <button class="button primary submit-button" type="submit" id="analyze-button">Analyze my resume <span aria-hidden="true">→</span></button>
+    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    <p class="privacy-note">No resume database or saved uploads. Local analysis stays on this computer. Download only the reports you want to keep.</p>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+ALEX MORGAN
+alex.morgan@example.com | github.com/alex-example
+
+SUMMARY
+Computer science student interested in Python backend development and practical data analysis. Enjoy building understandable software, testing assumptions and documenting results. Seeking an internship where I can contribute to useful applications and learn from code reviews.
+
+EDUCATION
+Bachelor of Technology in Computer Science
+Example Institute of Technology | 2023 - 2027
+Relevant coursework: Data Structures, Database Systems, Software Engineering and Statistics.
+
+TECHNICAL SKILLS
+Python, Flask, SQL, SQLite, Pandas, HTML, CSS, Git, GitHub, unit testing
+
+PROJECTS
+Campus Library Tracker | Python, Flask, SQLite
+- Built a Flask application with 6 endpoints to track book loans and overdue returns for a classroom demonstration.
+- Implemented SQL queries and validation rules to prevent duplicate loans and make borrower records easier to maintain.
+- Created 18 tests covering checkout, return, search and invalid inputs, using a fictional dataset of library records.
+- Documented installation steps and application routes so classmates could run the project and contribute improvements.
+
+Student Survey Analysis | Python, Pandas
+- Analyzed 500 records from a synthetic student survey to summarize study patterns and identify missing responses.
+- Automated data cleaning and generated summary reports to compare results across departments using reproducible Python scripts.
+- Collaborated with classmates to review assumptions and present findings with clear explanations of the dataset limitations.
+
+CERTIFICATIONS
+Introduction to Python Programming — Example Course
+
+This resume is fictional and is included only as a demonstration input.

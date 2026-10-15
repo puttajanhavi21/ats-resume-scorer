@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: ats-resume-scorer
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt gunicorn
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /

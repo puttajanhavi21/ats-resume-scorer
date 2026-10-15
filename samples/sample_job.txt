@@ -1,0 +1,13 @@
+Python Backend Developer Intern
+
+We are looking for a student developer to build and maintain small web applications.
+Required skills: Python, Flask, SQL, Git, REST APIs and unit testing.
+Familiarity with PostgreSQL, Docker and AWS is useful but not required.
+
+Responsibilities include developing backend endpoints, validating user input,
+writing automated tests, investigating bugs and documenting design decisions.
+The intern will collaborate with a mentor, explain technical tradeoffs and use
+code review feedback to improve maintainability. Experience with data analysis
+using Pandas is a plus. Clear communication and curiosity are valued.
+
+This job description is fictional and is included only as a demonstration input.
