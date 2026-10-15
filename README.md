@@ -6,7 +6,9 @@ A beginner-friendly Python and Flask project that reads a resume, checks its str
 
 ![Example report](samples/app_preview.png)
 
-**Project links:** [Live demo](http://127.0.0.1:5000) | GitHub repository: add the public repository URL after pushing this folder to GitHub.
+**Project links:** [Local demo](http://127.0.0.1:5000) | [GitHub repository](https://github.com/puttajanhavi21/ats-resume-scorer)
+
+[![Tests](https://github.com/puttajanhavi21/ats-resume-scorer/actions/workflows/tests.yml/badge.svg)](https://github.com/puttajanhavi21/ats-resume-scorer/actions/workflows/tests.yml)
 
 ## What you get
 
@@ -53,7 +55,7 @@ Visit **http://127.0.0.1:5000**. On Linux, you may need your distribution's Pyth
 
 ### Deploy on Render
 
-The included `render.yaml` configures a free Render web service with Gunicorn. Push this project to GitHub, create a new Render Blueprint from the repository, and select the free instance plan. Render will install the dependencies, start the Flask app, and use `/` as its health check. Replace the local Live demo link above with the Render URL once deployment completes.
+The included `render.yaml` configures a free Render web service with Gunicorn. Create a new Render Blueprint from the [GitHub repository](https://github.com/puttajanhavi21/ats-resume-scorer) and select the free instance plan. Render will install the dependencies, start the Flask app, and use `/` as its health check. Replace the local demo link above with the Render URL once deployment completes.
 
 ## 2. Try it
 
