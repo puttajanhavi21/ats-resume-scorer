@@ -10,6 +10,8 @@ A beginner-friendly Python and Flask project that reads a resume, checks its str
 
 [![Tests](https://github.com/puttajanhavi21/ats-resume-scorer/actions/workflows/tests.yml/badge.svg)](https://github.com/puttajanhavi21/ats-resume-scorer/actions/workflows/tests.yml)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/puttajanhavi21/ats-resume-scorer)
+
 ## What you get
 
 - PDF, DOCX and UTF-8 TXT uploads, or pasted resume text.
